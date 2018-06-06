@@ -59,8 +59,8 @@ cc.Class({
         }
         
         var salf = this;
-        cc.log(salf.hero.node.x+"======eree")
-        cc.game.addPersistRootNode(salf.hero.node);
+       
+
         this.loadData(salf.loadRoomcallBack,salf);
         this.armature = this.hero.armature();
         this.armature.animation.fadeIn("Move", -1, 0, 0, "ONEANIMATION");

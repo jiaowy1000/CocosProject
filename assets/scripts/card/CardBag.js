@@ -1,16 +1,13 @@
-var CardData = require("CardData");
+var CardBag = require("CardBag");
+var Global = require("Global"); 
+
 cc.Class({
     extends: cc.Component,
     properties: {
-        cardList: {
-            default: [],
-            type: CardData
-        },
         cardPrefab: cc.Prefab,
-        
     },
     onLoad () {
-        
+        //应该由卡包和Global.js做互动
         var node = this.node;
         var self = this;
         node.on(cc.Node.EventType.MOUSE_DOWN, function ( event ){
@@ -18,19 +15,20 @@ cc.Class({
             event.stopPropagation();
 
         });
-
-        for (var i = 0; i < this.cardList.length; ++i) {
+        //玩家的手牌包裹，尚未载入真实数据
+        for (var i = 0; i < Global.curCardIDs.length; i++) {
             var card = cc.instantiate(this.cardPrefab);
-            var data = this.cardList[i];
+            //var data = this.cardList[i];
+            var cardID = Global.curCardIDs[i];
             this.node.addChild(card);
-            card.getComponent('CardTemplate').init(data);
+            card.getComponent('CardTemplate').init(cardID);
         }
     },
     hideAll:function(){
-        this.node.active = false;
+        this.node.setOpacity(0);
     },
     showAll:function(){
-        this.node.active = true;
+        this.node.setOpacity(255);
     } 
    
 });

@@ -69,8 +69,8 @@ cc.Class({
         enermy.hpChangeTo(100);
         self.getCardBtn.node.on("click", function (event) {
             //抽牌 随机1-10张
-            var carNum = parseInt(cc.random0To1()*10);
-            cc.log(carNum);
+            var carNum = 1+parseInt(cc.random0To1()*10); 
+            cc.log('抽牌数量：'+carNum);
             self.cardsControl.getComponent("HandCardsControl").getCardToN(carNum);
         });
         this.node.on('useCard', function (event) {

@@ -25,15 +25,15 @@ cc.Class({
     },
     onLoad(){
         this.node.on('MOUSE_ENTER',function(event){
-            event.target.parent.getComponent("CardTemplate").toGrow();
+            event.target.parent.parent.getComponent("CardTemplate").toGrow();
         });
         this.node.on('MOUSE_LEAVE',function(event){
-            event.target.parent.getComponent("CardTemplate").toGrowBack();
+            event.target.parent.parent.getComponent("CardTemplate").toGrowBack();
         });
         var self = this;
         this.node.on('MOUSE_DOWN',function(event){
             //event.target.parent.getComponent("CardTemplate").chooseThis();
-            self.chooseCard(event.target.parent); 
+            self.chooseCard(event.target.parent.parent); 
         });
     },
     chooseCard:function(cardNode){
@@ -82,14 +82,14 @@ cc.Class({
         var a = parseInt((10 - num)/2) + 1;
         for(var i=0;i<num;i++){
             var card = cc.instantiate(this.cardPrefab);
-            var data = {cardId:0,cardText1:"对指定敌人造成5点物理伤害",cardText2:"额外造成2点物理伤害",cardText1:"攻击强度+1"} ;
-            var getSpriteTempURL = function(a){ return cc.url.raw("resources/img/card/card"+(a+1)+".png")}.bind(this,i); 
-
-            data.cardPicURL = getSpriteTempURL();
-            cc.log(data.cardPicURL);
+            //应该从牌包里抽牌，但现在先随机抽一个cardID 0-9的牌
+            var cardID = parseInt(cc.random0To1()*10);
             this["node"+(a+i)].addChild(card);
-            card.getComponent('CardTemplate').init(data);
-            
+            card.getComponent('CardTemplate').init(cardID);
+            // var data = {cardId:0,cardText1:"对指定敌人造成5点物理伤害",cardText2:"额外造成2点物理伤害",cardText1:"攻击强度+1"} ;
+            // var getSpriteTempURL = function(a){ return "resources/img/card/card"+(a+1)+".png"}.bind(this,i); 
+            // data.cardPicURL = getSpriteTempURL();
+            // cc.log(data.cardPicURL);
         }
         if(ji){
             for(var i=1;i<=10;i++){

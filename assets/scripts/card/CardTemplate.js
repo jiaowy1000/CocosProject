@@ -1,24 +1,25 @@
+var CardsAll = require("CardsAll");
 cc.Class({
     extends: cc.Component,
 
     properties: {
         cardId: 0,
         defaultNode: cc.Node,
-        cardPic: cc.Sprite,
+        picSprite: cc.Sprite,
         cardText1: cc.Label,
         cardText2: cc.Label,
         cardText3: cc.Label,
         choose:false,
     },
-    init: function (data) {
-        this.cardId = data.cardId;
-        this.cardText1.string = data.cardText1;
-        this.cardText2.string = data.cardText2;
-        this.cardText3.string = data.cardText3;
-        var cardPic = this.cardPic;
-        cc.textureCache.addImage(data.cardPicURL,function(tx){
-            cardPic.getComponent(cc.Sprite).spriteFrame.setTexture(tx); 
-        });
+    init: function (cardId) {
+        //以卡片id就可以初始化，应该引入CardAll，从其中取数据 和 图片信息
+        this.cardId = cardId;
+        var cardsAll = cc.director.getScene().getChildByName('CardsAll');  
+        var cardsAllComponent = cardsAll.getComponent("CardsAll");
+        this.cardText1.string = cardsAllComponent.getCardByID(cardId).cardText1; 
+        this.cardText2.string = cardsAllComponent.getCardByID(cardId).cardText2
+        this.cardText3.string = cardsAllComponent.getCardByID(cardId).cardText3; 
+        this.picSprite.spriteFrame=cardsAllComponent.getCardByID(cardId).cardPic;
     },
     onLoad(){
         //cc.log("this card id:"+this.id);

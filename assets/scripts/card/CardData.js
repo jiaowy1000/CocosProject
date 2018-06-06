@@ -1,25 +1,15 @@
 var CardData = cc.Class({
     name: 'Card',
     properties: {
+        //这几个属性用于显示
         cardId: 0,
         cardText1: '',
         cardText2: '', 
         cardText3: '',
-        cardPicURL:'',
-    },
-    init:function(cardId,cardText1,cardText2,cardText3,cardPicURL){
-        this.cardId = cardId;
-        this.cardText1=cardText1;
-        this.cardText2=cardText2;
-        this.cardText3=cardText3;
-        if(cardPicURL)
-            this.cardPicURL=cardPicURL;
-        else{
-            this.cardPicURL = cc.url.raw("resources/img/card/card"+cardId+".png")
-        }
-        return this;
+        cardPic:{
+            default:null,
+            type:cc.SpriteFrame,
+        },
+        //此外还应该有卡牌的类型，伤害等等一大堆东西
     }
 });
-CardData.prototype.getInstance = function(){
-    return new CardData();
-}
