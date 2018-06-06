@@ -1,7 +1,0 @@
-{
-  "ver": "1.0.0",
-  "uuid": "179165d4-410d-472b-9cd3-059d87a5996d",
-  "atlasJson": "{\"width\":1024,\"height\":512,\"name\":\"hero\",\"imagePath\":\"hero_tex.png\",\"SubTexture\":[{\"width\":130,\"y\":240,\"height\":103,\"name\":\"Guy 1 Legs\",\"x\":1},{\"width\":238,\"y\":1,\"height\":237,\"name\":\"Guy 1 Body\",\"x\":1},{\"width\":214,\"y\":345,\"height\":53,\"name\":\"Arrow\",\"x\":1},{\"width\":167,\"y\":1,\"height\":273,\"name\":\"Bow 5\",\"x\":241},{\"width\":75,\"y\":1,\"height\":273,\"name\":\"Bow 2\",\"x\":540},{\"width\":60,\"y\":1,\"height\":273,\"name\":\"Bow 1\",\"x\":617},{\"width\":128,\"y\":1,\"height\":273,\"name\":\"Bow 4\",\"x\":410}]}",
-  "texture": "9c7ef2e4-66e3-4365-8685-2274de65b44d",
-  "subMetas": {}
-}
