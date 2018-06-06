@@ -2,11 +2,13 @@
   "appKey": "",
   "appSecret": "",
   "encryptJs": true,
-  "excludeScenes": [],
+  "excludeScenes": [
+    "079c2190-1da5-4953-9d5d-c128c68aeec1"
+  ],
   "fb-instant-games": {},
   "includeAnySDK": false,
   "includeSDKBox": false,
-  "inlineSpriteFrames": true,
+  "inlineSpriteFrames": false,
   "inlineSpriteFrames_native": false,
   "jailbreakPlatform": false,
   "md5Cache": false,
@@ -19,15 +21,15 @@
     "portrait": false,
     "upsideDown": false
   },
-  "packageName": "org.cocos2d.examplecases",
+  "packageName": "org.cocos2d.wayofhero",
   "privateKey": "",
   "qqplay": {
     "REMOTE_SERVER_ROOT": "",
     "orientation": "portrait"
   },
   "renderMode": "0",
-  "startScene": "163751d8-0607-4db5-8177-6be627d71e97",
-  "title": "CocosTester",
+  "startScene": "a2981638-344e-42e0-b9b4-97d4c6ad9a24",
+  "title": "wayofhero",
   "webOrientation": "auto",
   "wechatgame": {
     "REMOTE_SERVER_ROOT": "",
@@ -36,6 +38,6 @@
     "orientation": "portrait",
     "subContext": ""
   },
-  "xxteaKey": "0c24c453-8f4d-47",
+  "xxteaKey": "8abfa4ef-7b69-49",
   "zipCompressJs": true
 }
